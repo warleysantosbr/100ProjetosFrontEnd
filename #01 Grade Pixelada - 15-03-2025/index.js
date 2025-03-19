@@ -7,116 +7,116 @@ let colorButton = document.getElementById("color-input");
 let eraseBtn = document.getElementById("erase-btn");
 let paintBtn = document.getElementById("paint-btn");
 let widthValue = document.getElementById("width-value");
-let heigthValue = document.getElementById("heigth-value");
+let heightValue = document.getElementById("height-value");
 
 let events = {
-    mouse:{
+    mouse: {
         down: "mousedown",
         move: "mousemove",
         up: "mouseup"
     },
     touch: {
         down: "touchstart",
-        mobe: "touchmove",
+        move: "touchmove",
         up: "touchend"
-    },
+    }
 };
 
 let deviceType = "";
-
 let draw = false;
 let erase = false;
 
-const isTouchDevice = () =>{
-    try{
+const isTouchDevice = () => {
+    try {
         document.createEvent("TouchEvent");
         deviceType = "touch";
         return true;
-    } catch (e){
+    } catch (e) {
         deviceType = "mouse";
-        return  false;
+        return false;
     }
 };
 
 isTouchDevice();
 
-gridButton.addEventListener("click", function()={
+/* ✅ Criar grade corretamente */
+gridButton.addEventListener("click", () => {
     container.innerHTML = "";
-    for(let i =0; i < gridHeigth.value; i++){
-        count +=2;
+    let count = 0;
+
+    for (let i = 0; i < gridHeigth.value; i++) {
         let div = document.createElement("div");
         div.classList.add("gridRow");
 
-        for(let j=0; j < gridWidth.value; j++){
-            count+=2;
+        for (let j = 0; j < gridWidth.value; j++) {
+            count += 1;
             let col = document.createElement("div");
             col.classList.add("gridCol");
             col.setAttribute("id", `gridCol${count}`);
-            col.addEventListener(events[deviceType].down, ()=>{
+
+            /* ✅ Agora só pinta se o mouse estiver pressionado */
+            col.addEventListener(events[deviceType].down, () => {
                 draw = true;
-                if(erase){
-                    col.style.backgroundColor = "transparent";
-                }else{
-                    col.style.backgroundColor = colorButton.value;
-                }
+                col.style.backgroundColor = erase ? "transparent" : colorButton.value;
             });
 
-            col.addEventListener(events[deviceType].move, (e)=>{
-                let elementId = document.elementFromPoint(
-                    !isTouchDevice() ? e.clientX : e.touches[0].clientX,
-                    !isTouchDevice() ? e.clientY : e.touches[0].clientY,
-                ),id;
+            col.addEventListener(events[deviceType].move, (e) => {
+                if (!draw) return; // ✅ Evita pintar sem clicar
+
+                let x = deviceType === "mouse" ? e.clientX : e.touches[0].clientX;
+                let y = deviceType === "mouse" ? e.clientY : e.touches[0].clientY;
+
+                let elementId = document.elementFromPoint(x, y);
                 checker(elementId);
             });
 
-            col.addEventListener(events[deviceType].up, ()=>{
+            col.addEventListener(events[deviceType].up, () => {
                 draw = false;
             });
 
-            div.appeendChild(col);
-            
+            div.appendChild(col);
         }
 
         container.appendChild(div);
-
     }
 });
 
-function checker(elementId){
-    let gridColumns = document.querySelectorAll(".gridCol");
-    gridColumns.forEach((element)=>{
-        if(elementId == element.id){
-            if(draw && !erase){
-                element.style.backgroundColor = colorButton.value;
-            }else if(draw && erase){
-                element.style.backgroundColor = "transparent";
-            }
-        }
-    });
+/* ✅ Corrigida a lógica para evitar pintura aleatória */
+function checker(element) {
+    if (!element || !element.classList.contains("gridCol")) return;
+
+    if (draw && !erase) {
+        element.style.backgroundColor = colorButton.value;
+    } else if (draw && erase) {
+        element.style.backgroundColor = "transparent";
+    }
 }
 
-clearGridButton.addEventListener("click", ()=>{
+/* Limpar grade */
+clearGridButton.addEventListener("click", () => {
     container.innerHTML = "";
-}));
+});
 
-eraseBtn.addEventListener("click", ()=>{
+/* Mudar para modo apagar */
+eraseBtn.addEventListener("click", () => {
     erase = true;
-})
+});
 
-
-paintBtn.addEventListener("click", ()=>{
+/* Mudar para modo pintar */
+paintBtn.addEventListener("click", () => {
     erase = false;
 });
 
-gridWidth.addEventListener("input", ()=>{
+/* Atualizar valores dos sliders */
+gridWidth.addEventListener("input", () => {
     widthValue.innerHTML = gridWidth.value < 9 ? `0${gridWidth.value}` : gridWidth.value;
 });
 
-gridHeigth.addEventListener("input", ()=>{
-    heigthValue.innerHTML = gridHeigth.value < 9 ? `0${gridHeigth.value}` : gridHeigth.value;
+gridHeigth.addEventListener("input", () => {
+    heightValue.innerHTML = gridHeigth.value < 9 ? `0${gridHeigth.value}` : gridHeigth.value;
 });
 
-window.onload = () =>{
+window.onload = () => {
     gridHeigth.value = 1;
     gridWidth.value = 1;
 };
