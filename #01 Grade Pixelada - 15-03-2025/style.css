@@ -1,3 +1,4 @@
+/* Resetando margens, preenchimentos e define a box-sizing padrão */
 *{
     padding: 0;
     margin: 0;
@@ -5,10 +6,12 @@
     font-family: monospace;
 }
 
+/* Deixa o fundo da pagina todo nessa cor azul */
 body{
     background-color: rgb(11, 2, 92);
 }
 
+/* Caixa principal que contém os elementos */
 .wrapper{
     background-color: #ffffff;
     width: 80vmin;
@@ -24,6 +27,7 @@ label{
     display: block;
 }
 
+/* Estiliza os números dos valores do range */
 span{
     position: relative;
     font-size: 22px;
@@ -34,17 +38,18 @@ span{
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    gap
+    gap: 10px;
 }
 
 button{
-    background-color: #004aad;
+    background-color: #002350;
     border: none;
     border-radius: 5px;
     padding: 5px;
     color: #ffffff
 }
 
+/* Estilizando o seletor de cores */
 input[type="color"]{
     -webkit-animation: none;
     -moz-appearance: none;
@@ -76,7 +81,7 @@ input[type="color"]::-moz-color-swatch{
     display: flex;
 }
 
-@media only screen and (max-width? 768px){
+@media only screen and (max-width: 768px){
     .gridCol{
         height: 0.8em;
         width: 0.8em;
