@@ -23,5 +23,6 @@ Este projeto permite criar uma **grade pixelada interativa**, onde o usuário po
 4. Clique nas células para pintar ou segure para desenhar.
 
 ## 📸 Imagem do Projeto
-![Grade Pixelada](/#01%20Grade%20Pixelada%20-%2015-03-2025/img/demonstracao.png)
+![Grade Pixelada 1.0](/#01%20Grade%20Pixelada%20-%2015-03-2025/img/demonstracao.png)
+![Grade Pixelada 1.1](/#01%20Grade%20Pixelada%20-%2015-03-2025/img/ws.code.png)
 
