@@ -69,6 +69,29 @@ linkButton.addEventListener("click", () =>{
     }
 })
 
-CONTINUA!...
+const highlighter = (className, needsRemoval) =>{
+    className.forEach((button) =>{
+        button.addEventListener("click", () =>{
+            if(needsRemoval){
+                let alreadyActive = false;
+                if(button.classList.contains("active")){
+                    alreadyActive = true;
+                }
+                highlighterRemover(className);
+                if(!alreadyActive){
+                    button.classList.add("active");
+                }
+            }else{
+                button.classList.toggle("active");
+            }
+        });
+    });
+};
 
-URL: https://youtu.be/gRyvG7PZ4m0?si=qhp9aEf-7EalSPHd&t=774
+const highlighterRemover = (className) => {
+    className.forEach((button) => {
+        button.classList.remove("active");
+    });
+};
+
+window.onload = 
