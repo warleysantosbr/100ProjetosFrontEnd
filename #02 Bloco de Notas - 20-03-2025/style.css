@@ -65,13 +65,13 @@ input[type="color"]{
     cursor: pointer;
 }
 
-/*Como o video é antigo ele tem webkit e moz que não vou utilizar aqui pq já esta obsoleto*/
 
 #text-input{
     margin-top: 10px;
     border: 1px solid #ddd;
     padding: 20px;
     height: 50vh;
+    overflow-y: auto;
 }
 
 .active{

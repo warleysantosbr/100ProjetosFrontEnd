@@ -4,7 +4,7 @@ let fontName = document.getElementById("fontName");
 let fontSizeRef  = document.getElementById("fontSize");
 let writingArea = document.getElementById("text-input");
 let linkButton = document.getElementById("createLink");
-linkButton.title = "Clique para adicionar um link";
+let linkMensege = linkButton.title = "Clique para adicionar um link";
 let alignButtons = document.querySelectorAll(".align");
 let spacingButtons = document.querySelectorAll(".spacing");
 let formatButtons = document.querySelectorAll(".format");
@@ -55,7 +55,7 @@ optionsButtons.forEach((button) =>{
 
 advancedOptionButton.forEach((button) =>{
     button.addEventListener("change", () =>{
-        modifyText(button.id, false, null);
+        modifyText(button.id, false, button.value);
     });
 });
 
@@ -94,4 +94,6 @@ const highlighterRemover = (className) => {
     });
 };
 
-window.onload = 
+window.onload = intializer();
+
+
