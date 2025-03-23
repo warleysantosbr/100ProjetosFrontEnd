@@ -9,12 +9,31 @@
 </head>
 <body>
 
+
+
+    
     <div class="container">
         <h2>Gerador de senha</h2>
         <div class="wrapper">
             <div class="input-box">
                 <input type="text">
+                <span class="material-symbols-rounded">Copiar</span>
             </div>
+            <div class="pass-indicador"></div>
+            <div class="details">
+                <label class="title">Comprimento da senha</label>
+                <span></span>
+            </div>
+            <input type="text" min="1" max="30" value="15" step="1">
+        </div>
+
+        <div class="pass-settings">
+            <label class="title">Configurações</label>
+            <ul class="options">
+                <li class="option">
+                    <input type="checkbox" id="lowercase">
+                </li>
+            </ul>
         </div>
     </div>
     
