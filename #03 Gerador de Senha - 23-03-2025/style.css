@@ -65,37 +65,37 @@ body {
     color: #005CC8 !important;
 }
 
-.wrapper .pass-indicador{
+.wrapper .pass-indicator {
     width: 100%;
     height: 4px;
     position: relative;
     margin-top: 0.75rem;
     border-radius: 25px;
-}
+  }  
 
-.pass-indicador::before{
+  .pass-indicator::before {
     position: absolute;
     content: "";
     height: 100%;
     width: 50%;
     border-radius: inherit;
     transition: width 0.3s ease;
-}
+  }
 
-.pass-indicador#week::before{
+  .pass-indicator#weak::before {
     width: 20%;
     background: #e64a4a;
-}
+  }
 
-.pass-indicador#medium::before{
-    width: 20%;
+  .pass-indicator#medium::before {
+    width: 50%; /* CORRIGIDO: estava 20%, agora 50% */
     background: #f1c80b;
-}
+  }
 
-.pass-indicador#strong::before{
-    width: 20%;
+  .pass-indicator#strong::before {
+    width: 100%; /* CORRIGIDO: estava 20%, agora 100% */
     background: #43a047;
-}
+  }
 
 .wrapper .pass-length{
     margin: 1.56rem 0 1.25rem;
