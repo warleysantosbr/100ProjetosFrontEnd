@@ -19,4 +19,33 @@ let colorLight = "#fff",
     text = defaultUrl,
     size = 300;
 
-function 
+function handleDarkColor(e) {
+    colorDark = e.target.value;
+    generateQRCode();
+}
+
+function handleLightColor(e) {
+    colorLight = e.target.value;
+    generateQRCode();
+}
+
+function handleQRText(e) {
+    const value = e.target.value;
+    text = value;
+    if (!value) {
+        text = defaultUrl
+    }
+    generateQRCode();
+}
+
+async function generateQRCode() {
+    qrContainer.innerHTML = "";
+    new generateQRCode("qr-code", {
+        text,
+        height: size,
+        width: size,
+        colorDark,
+        colorLight,
+    });
+    download.href = await resolveDataUrl();
+}
