@@ -13,7 +13,7 @@ qrText.addEventListener("input", handleQRText);
 sizes.addEventListener("change", handleSize);
 shareBtn.addEventListener("click", handleShare);
 
-const defaultUrl = "https://youtube.com/WarleySantosBr";
+const defaultUrl = "https://www.youtube.com/@AgenciaZero64/streams";
 let colorLight = "#fff", 
     colorDark = "#000",
     text = defaultUrl,
