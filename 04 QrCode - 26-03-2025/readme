@@ -1,0 +1,40 @@
+Gerador de QR Code Personalizado
+Projeto criado como parte do meu aprendizado em JavaScript. A ideia era desenvolver um gerador de QR Code onde o usuário pode:
+
+✅ Digitar o texto ou link desejado
+✅ Escolher a cor de fundo e a cor dos quadradinhos do QR
+✅ Selecionar o tamanho do QR Code
+✅ Baixar ou compartilhar diretamente o QR gerado
+
+Tudo de forma dinâmica, personalizada e responsiva.
+
+🚀 Tecnologias utilizadas
+HTML
+
+CSS
+
+JavaScript (puro)
+
+QRCode.js para geração do QR Code
+
+📚 Tutorial utilizado
+Esse projeto foi desenvolvido seguindo o tutorial do canal AsmrProg:
+
+📺 Link do vídeo-aula:
+https://www.youtube.com/watch?v=I50Xwve6QW4&list=PLkC56g8fboI0HghByzVuD2Vz8ROUXfF_j&index=4&pp=iAQB
+
+Mesmo já entendendo boa parte do código, usei como prática pra treinar os conceitos.
+
+💬 Experiência pessoal
+Esse projeto foi tranquilo de desenvolver e me ajudou muito a entender melhor vários conceitos de JavaScript, que é justamente onde eu mais tô buscando evoluir.
+
+O mais legal é que:
+
+Tudo funcionou de boa
+
+Teve até detalhe que o cara do tutorial errou e eu corrigi antes dele corrigir no vídeo
+
+Tô empolgado, porque hoje também fiz meu primeiro teste de live, mesmo já quase finalizando o código
+
+🎥 Link da minha live teste (mais pra treino mesmo):
+https://www.youtube.com/watch?v=-IXXzxFpL6U&pp=ygUOYWdlbmNpYSB6ZXJvNjQ%3D
