@@ -49,3 +49,5 @@ async function generateQRCode() {
     });
     download.href = await resolveDataUrl();
 }
+
+//https://youtu.be/I50Xwve6QW4?si=dXFuchN8Xs-Ua2dz&t=655
