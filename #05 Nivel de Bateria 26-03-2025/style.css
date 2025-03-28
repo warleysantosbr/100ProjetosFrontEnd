@@ -109,4 +109,41 @@ body{
     animation: animated-low 1.2s infinite alternate;
 }
 
-/*https://youtu.be/pXGVgEQntsA?si=Njrsfjp7QLchtcrT&t=548
+.animated-green, .animated-red, .green-color{
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes animated-charging{
+    0%{
+        text-shadow: none;
+    }
+    100%{
+        text-shadow: 0 0 6px hsl(92, 90%, 68%);
+    }
+}
+
+@keyframes animated-low{
+    0%{
+        text-shadow: none;
+    }
+    100%{
+        text-shadow: 0 0 8px hsl(7, 89%, 46%);
+    }
+}
+
+.gradient-color-red, .green-color-red::after{
+    background: var(--gradient-color-red);
+}
+
+.gradient-color-green, .green-color-green::after{
+    background: var(--gradient-color-green);
+}
+
+.gradient-color-orange, .green-color-orange::after{
+    background: var(--gradient-color-orange);
+}
+
+.gradient-color-yellow, .green-color-yellow::after{
+    background: var(--gradient-color-yellow);
+}
