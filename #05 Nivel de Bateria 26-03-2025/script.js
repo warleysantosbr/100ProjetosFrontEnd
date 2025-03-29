@@ -1,7 +1,7 @@
 initBattery();
 
 function initBattery() {
-    const batteryLiquid = document.querySelector(".Bliquid");
+    const batteryLiquid = document.querySelector(".bliquid");
     const batteryStatus = document.querySelector(".Bstatus");
     const Bpercentage = document.querySelector(".Bpercentage");
     navigator.getBattery().then((batt) => {
@@ -10,12 +10,12 @@ function initBattery() {
             Bpercentage.innerHTML = level + "%";
             batteryLiquid.style.height = `${parseInt(batt.level *100)}%`;
             if(level == 100){
-                batteryStatus.innerHTML = `Battery Full <i class="ri-battery-2-fill green-color"></i>`;
+                batteryStatus.innerHTML = `Bateria cheia <i class="ri-battery-2-fill green-color"></i>`;
                 batteryLiquid.style.height = "103%";
             } else if (level <= 20 && !batt.charging) {
-                batteryStatus.innerHTML = `Low Charge <i class="ri-plug-line animated-red animated-red"></i>`;
+                batteryStatus.innerHTML = `Pouca Bateria <i class="ri-plug-line animated-red animated-red"></i>`;
             } else if(batt.charging) {
-                batteryStatus.innerHTML = `Charging ... <i class="ri-flashlight-line animated-green"></i>`;
+                batteryStatus.innerHTML = `Carregando ... <i class="ri-flashlight-line animated-green"></i>`;
             }else{
                 batteryStatus.innerHTML = "";
             }
