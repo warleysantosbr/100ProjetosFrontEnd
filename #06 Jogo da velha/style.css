@@ -1,0 +1,99 @@
+body{
+    background: ghostwhite;
+    color: dimgray;
+    font-family: serif;
+    text-align: center;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+#container{
+    margin: 5% auto;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.box{
+    display: inline-block;
+    border: 1px solid gray;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+span{
+    position: absolute;
+    font-size: 75px;
+    font-family: sans-serif;
+    text-align: center;
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    margin: 5px;
+    margin-left: -35px;
+}
+
+.top{
+    border-top: none;
+}
+
+.bottom{
+    border-bottom: none;
+}
+
+.left{
+    border-left: none;
+}
+
+.right{
+    border-right: none;
+}
+
+.alert {
+    height: 75px;                     /* Altura da caixinha */
+    width: 125px;                     /* Largura da caixinha */
+    display: inline-block;            /* Permite ficar do lado de outras, sem quebrar linha completa */
+    position: relative;               /* Permite usar top/bottom/left/right */
+    z-index: 10;                      /* Fica por cima de outros elementos (camadas) */
+    margin-top: -50%;                 /* Sobe bastante (metade do próprio tamanho do elemento pai) */
+    border-radius: 20px;              /* Cantos arredondados bonitinhos */
+    box-shadow: 0 0 75px 2px dimgray; /* Sombra pra destacar */
+    animation: lager 0.5s;            /* Animação chamada "lager" de 0.5s */
+    animation-fill-mode: forwards;   /* Quando a animação terminar, mantém o estado final */
+    box-sizing: content-box;         /* Padding e border NÃO são incluídos na largura/altura */
+    padding: 30px;                    /* Espaço interno grande (vai aumentar o tamanho total!) */
+    bottom: 50px;                     /* Empurra 50px pra cima (por causa do relative) */
+    top: 0;                           /* Também define 0px do topo (mas conflita com o bottom) */
+}
+
+button{
+    background: dimgray;
+    border-radius: 2px;
+    color: ghostwhite;
+    border: none;
+    outline: none;
+}
+
+button:focus{
+    background: silver;
+}
+
+.activeBox{
+    background: silver;
+}
+
+@keyframes lager{
+    from{
+        height: 75px;
+        width: 125px;
+    }
+
+    to{
+        height: 100px;
+        width: 250px;
+    }
+}
